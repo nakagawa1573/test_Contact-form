@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// contactページ
+Route::get('/', [ContactController::class, 'contact']);
+
+// confirmページ
+Route::get('/confirm', [ContactController::class, 'confirm']);
+
+// サンクスページ
+Route::get('/thanks', [ContactController::class, 'thanks']);
+
+//管理画面
+Route::get('/admin', [ContactController::class, 'admin']);
+
+
+//登録ページ
+Route::get('/register', [UserController::class, 'register']);
+
+//ログインページ
+Route::get('/login', [UserController::class, 'login']);

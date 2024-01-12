@@ -1,0 +1,47 @@
+.header {
+    border-bottom: 1px solid #E0DFDE;
+    position: relative;
+    background: #fff;
+}
+
+.header__ttl {
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.header__ttl-txt {
+    color: #8B7969;
+    font-size: 40px;
+    font-family: 'Inika', serif;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.header__link {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.header__link-btn {
+    font-family: 'Inika', serif;
+    font-size: 20px;
+    color: #D9C6B5;
+    background: #F6F6F6;
+    border: 1px solid#D9C6B5;
+    height: 35px;
+    width: 100px;
+}
+
+
+.main__ttl {
+    text-align: center;
+}
+
+.main__ttl-txt {
+    color: #8B7969;
+    font-size: 35px;
+    font-family: 'Inika', serif;
+}

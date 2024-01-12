@@ -1,0 +1,56 @@
+body {
+    background: #F1ECE7;
+}
+
+
+.login__content {
+    width: 500px;
+    min-width: 40%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #C5B9B0;
+    border-radius: 6px;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.login__content-form__box {
+    text-align: left;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.login__content-form__ttl {
+    font-size: 25px;
+    color: #8B7969;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+#email {
+    margin-top: 0;
+}
+
+.login__content-form__input {
+    width: 100%;
+    height: 55px;
+    border: none;
+    background: #F4F4F4;
+    padding-left: 20px;
+}
+
+input::placeholder {
+    font-size: 14px;
+    color: #BEB1A6;
+}
+
+.login__content-btn {
+    background: #8B7969;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    height: 45px;
+    width: 160px;
+    cursor: pointer;
+    margin-top: 95px;
+}

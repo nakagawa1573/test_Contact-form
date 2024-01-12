@@ -1,0 +1,165 @@
+.contact {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.contact__form-table {
+    width: 100%;
+}
+
+.contact__form-table__item {
+    text-align: left;
+    color: #8B7969;
+    font-size: 20px;
+    width: 35%;
+}
+
+.contact__form-table__item>span {
+    color: #FF9494;
+}
+
+.contact__form-table__input {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+}
+
+::placeholder {
+    color: #BEB1A6;
+}
+
+
+
+.contact__form-table__input>input {
+    height: 30px;
+    border: none;
+    background: #F4F4F4;
+    padding-left: 20px;
+}
+
+#name {
+    display: flex;
+    justify-content: space-between;
+}
+
+#name>input {
+    width: 47%;
+}
+
+.contact__form-table__input-gender {
+    display: inline-block;
+    font-size: 18px;
+    color: #8B7969;
+}
+
+#man{
+    margin-left: 10px;
+}
+
+#woman,
+#others{
+    margin-left: 55px;
+}
+
+#man,
+#woman,
+#others{
+    accent-color: #8B7969;
+    appearance: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #8B7969;
+    outline: none;
+    vertical-align: middle;
+}
+
+input[type="radio"]:checked{
+    background: #8B7969;
+}
+
+#tell {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tell>input {
+    padding-left: 0;
+    width: 30%;
+}
+
+#tell>input::placeholder {
+    text-align: center;
+}
+
+#tell>p {
+    /* display: inline-block; */
+    /* padding: 0 10px; */
+    margin: 0 auto;
+}
+
+.contact__form-table__input-email,
+.contact__form-table__input-address,
+.contact__form-table__input-building {
+    width: 100%;
+}
+
+.contact__form-table__input-select {
+    border: none;
+    background: #F4F4F4;
+    padding: 8px 0 8px 20px;
+    width: 100%;
+    appearance: none;
+}
+
+.contact__form-table__input-select:invalid{
+    color: #BEB1A6;
+}
+
+.contact__form-table__input-select>option{
+    color: #000;
+}
+
+.select-box{
+    width: 50%;
+    position: relative;
+}
+
+.select-box::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #BEB1A6 transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.contact__form-table__input-textarea {
+    border: none;
+    background: #F4F4F4;
+    resize: none;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.contact__form-submit {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.contact__form-submit__btn {
+    background: #8B7969;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+}
