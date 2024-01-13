@@ -82,7 +82,7 @@
             <td class="admin__list-table__item" id="detail">
                 <form action="" class="admin__list-table__item-form">
                     <button class="admin__list-table__item-form__btn" id="detail">
-                        詳細
+                        <a href="#modal">詳細</a>
                     </button>
                 </form>
             </td>
@@ -96,7 +96,7 @@
             <td class="admin__list-table__item" id="detail">
                 <form action="" class="admin__list-table__item-form">
                     <button class="admin__list-table__item-form__btn" id="detail">
-                        詳細
+                        <a href="#modal">詳細</a>
                     </button>
                 </form>
             </td>
@@ -110,7 +110,7 @@
             <td class="admin__list-table__item" id="detail">
                 <form action="" class="admin__list-table__item-form">
                     <button class="admin__list-table__item-form__btn" id="detail">
-                        詳細
+                        <a href="#modal">詳細</a>
                     </button>
                 </form>
             </td>
@@ -123,4 +123,59 @@
         リセット
     </button>
 </div>
+
+{{-- モーダルウィンドウ --}}
+<section class="detail__modal" id="modal">
+    <div class="detail__close">
+                <a class="detail__close-btn" href="#">
+                    <img src="{{ asset('img/close.svg') }}" alt="close">
+                </a>
+    </div>
+
+    <article class="detail__list">
+        <table .detail__list-table>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">お名前</th>
+                <td class="detail__list-table__item">山田　太郎</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">性別</th>
+                <td class="detail__list-table__item">男性</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">メールアドレス</th>
+                <td class="detail__list-table__item">test@example.com</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">電話番号</th>
+                <td class="detail__list-table__item">08012345678</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">住所</th>
+                <td class="detail__list-table__item">東京都渋谷区千駄ヶ谷1-2-3</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">建物名</th>
+                <td class="detail__list-table__item">千駄ヶ谷マンション101</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header">お問い合わせの種類</th>
+                <td class="detail__list-table__item">商品の交換について</td>
+            </tr>
+            <tr class="detail__list-table__row">
+                <th class="detail__list-table__header" id="detail-content">お問い合わせ内容</th>
+                <td class="detail__list-table__item">届いた商品が注文した商品ではありませんでした。商品の交換をお願いします。</td>
+            </tr>
+        </table>
+    </article>
+
+    <div class="detail__delete">
+        <form action="">
+            <button class="detail__delete-btn">
+                削除
+            </button>
+        </form>
+    </div>
+
+</section>
 @endsection

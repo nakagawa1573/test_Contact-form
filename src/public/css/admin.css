@@ -170,11 +170,11 @@ select {
     width: 20%;
 }
 
-#gender{
+#gender {
     width: 15%;
 }
 
-#email{
+#email {
     width: 25%;
 }
 
@@ -190,15 +190,18 @@ select {
 
 .admin__list-table__item-form__btn {
     border: 1px solid #E1DBD6;
-    color: #E7DCD2;
     background: #FCFCFC;
     height: 40px;
     padding: 0 20px;
     line-height: 18px;
 }
 
+.admin__list-table__item-form__btn>a{
+    text-decoration: none;
+    color: #E7DCD2;
+}
 
-.admin__submit{
+.admin__submit {
     text-align: center;
 }
 
@@ -211,4 +214,88 @@ select {
     width: 160px;
     cursor: pointer;
     margin-top: 85px;
+}
+
+
+.detail__modal {
+    background: #fff;
+    width: 800px;
+    height: auto;
+    padding-bottom: 50px;
+    border: 1px solid #E3DEDA;
+    box-shadow: 5px 5px 5px #E3DEDA;
+    margin: 0 auto;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    transition: all .6s;
+}
+
+.detail__modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.detail__close {
+    text-align: right;
+    padding: 20px 20px 50px 0;
+}
+
+.detail__close-btn {
+    border: none;
+    background: transparent;
+
+}
+
+.detail__close-btn>img {
+    width: 40px;
+    height: auto;
+}
+
+.detail__list {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.detail__list-table__row {
+    text-align: left;
+    color: #8B7969;
+}
+
+.detail__list-table__header,
+.detail__list-table__item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.detail__list-table__header {
+    font-size: 20px;
+    width: 30%;
+}
+
+.detail__list-table__item {
+    padding-left: 70px;
+    font-size: 20px;
+}
+
+#detail-content {
+    vertical-align: top;
+}
+
+
+.detail__delete {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.detail__delete-btn {
+    border: none;
+    background: #BA370D;
+    color: #fff;
+    font-size: 18px;
+    height: 40px;
+    width: 75px;
 }
