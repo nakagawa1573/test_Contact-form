@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 // contactページ
 Route::get('/', [ContactController::class, 'contact']);
+Route::post('/', [ContactController::class, 'store']);
 
 // confirmページ
 Route::get('/confirm', [ContactController::class, 'confirm']);
@@ -25,11 +26,7 @@ Route::get('/confirm', [ContactController::class, 'confirm']);
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
 //管理画面
-Route::get('/admin', [ContactController::class, 'admin']);
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AuthController::class, 'admin']);
+});
 
-
-//登録ページ
-Route::get('/register', [UserController::class, 'register']);
-
-//ログインページ
-Route::get('/login', [UserController::class, 'login']);

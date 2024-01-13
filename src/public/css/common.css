@@ -28,13 +28,18 @@
 .header__link-btn {
     font-family: 'Inika', serif;
     font-size: 20px;
-    color: #D9C6B5;
     background: #F6F6F6;
+    color: #D9C6B5;
     border: 1px solid#D9C6B5;
     height: 35px;
     width: 100px;
+    cursor: pointer;
 }
 
+.header__link-btn>a {
+    text-decoration: none;
+    color: #D9C6B5;
+}
 
 .main__ttl {
     text-align: center;

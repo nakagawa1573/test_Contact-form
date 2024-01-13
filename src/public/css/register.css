@@ -10,7 +10,7 @@ body {
     border: 1px solid #C5B9B0;
     border-radius: 6px;
     text-align: center;
-    padding: 80px 0;
+    padding: 80px 0 50px 0;
 }
 
 .register__content-form__box {
@@ -23,10 +23,10 @@ body {
     font-size: 25px;
     color: #8B7969;
     margin-bottom: 10px;
-    margin-top: 40px;
+    margin-top: 0;
 }
 
-#name{
+#name {
     margin-top: 0;
 }
 
@@ -51,5 +51,17 @@ input::placeholder {
     height: 45px;
     width: 160px;
     cursor: pointer;
-    margin-top: 95px;
+    margin-top: 20px;
+}
+
+.form__error {
+    height: 55px;
+    color: #ff0000;
+    text-align: left;
+    width: 60%;
+    margin: 0 auto;
+    vertical-align: middle;
+    /* border: 1px solid red; */
+    font-size: 14px;
+    line-height: 55px;
 }

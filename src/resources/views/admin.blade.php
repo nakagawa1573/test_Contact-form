@@ -6,7 +6,8 @@
 
 @section('button')
     <div class="header__link">
-        <form action="">
+        <form action="/logout" method="post">
+            @csrf
             <button class="header__link-btn">
                 logout
             </button>
