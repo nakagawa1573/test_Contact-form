@@ -16,17 +16,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 // contactページ
-Route::get('/', [ContactController::class, 'contact']);
-Route::post('/', [ContactController::class, 'store']);
+Route::get('/', [ContactController::class, 'index']);
+Route::post('/', [ContactController::class, 'check']);
 
 // confirmページ
 Route::get('/confirm', [ContactController::class, 'confirm']);
+Route::post('/confirm', [ContactController::class, 'store']);
 
 // サンクスページ
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
 //管理画面
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [AuthController::class, 'admin']);
+    Route::get('/admin', [ContactController::class, 'admin']);
 });
+//contact削除
+Route::delete('/admin/delete', [ContactController::class, 'destroy']);
+// 検索
+Route::get('/admin/search', [ContactController::class, 'search']);
 

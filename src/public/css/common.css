@@ -34,11 +34,14 @@
     height: 35px;
     width: 100px;
     cursor: pointer;
+    padding: 0;
+    line-height: 35px;
 }
 
 .header__link-btn>a {
     text-decoration: none;
     color: #D9C6B5;
+    display: block;
 }
 
 .main__ttl {

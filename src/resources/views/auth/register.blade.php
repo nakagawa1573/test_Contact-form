@@ -7,7 +7,7 @@
 @section('button')
     <div class="header__link">
             <button class="header__link-btn">
-                <a href={{"/login"}}>login</a>
+                <a href="/login">login</a>
             </button>
     </div>
 @endsection
