@@ -45,8 +45,9 @@ select {
 }
 
 .admin__search-btn>img {
-    width: 30px;
+    width: 25px;
     height: auto;
+    margin-right: 10px;
 }
 
 .admin__search-gender:invalid,
@@ -71,7 +72,8 @@ select {
 }
 
 .admin__search-box__gender::before,
-.admin__search-box__category::before {
+.admin__search-box__category::before,
+.admin__search-date::after {
     content: "";
     width: 0;
     height: 0;
@@ -101,16 +103,25 @@ select {
     position: relative;
 }
 
-.admin__search-date::placeholder {
-    opacity: 0;
+.admin__search-date::before{
+    content: '日付を選択してください';
+    font-size: 18px;
+    color: #8B7969;
+    /* font-weight: bold; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .admin__search-date::-webkit-calendar-picker-indicator {
-    /* display: none; */
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
+}
+
+.admin__search-date::-webkit-datetime-edit {
+    display: none;
 }
 
 
@@ -214,6 +225,7 @@ select {
 .admin__submit {
     text-align: center;
     margin-top: 85px;
+    margin-bottom: 50px;
 }
 
 .admin__submit-btn {

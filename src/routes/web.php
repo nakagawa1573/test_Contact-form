@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::post('/', [ContactController::class, 'check']);
 // confirmページ
 Route::get('/confirm', [ContactController::class, 'confirm']);
 Route::post('/confirm', [ContactController::class, 'store']);
+Route::post('/confirm/fix', [ContactController::class, 'fix'] );
 
 // サンクスページ
 Route::get('/thanks', [ContactController::class, 'thanks']);
@@ -32,6 +34,10 @@ Route::middleware('auth')->group(function () {
 });
 //contact削除
 Route::delete('/admin/delete', [ContactController::class, 'destroy']);
-// 検索
+    // 検索
 Route::get('/admin/search', [ContactController::class, 'search']);
+
+Route::get('/register', [UserController::class, 'index']);
+Route::post('/register', [UserController::class, 'register']);
+
 

@@ -67,18 +67,12 @@
                         @if ($page == $paginator->currentPage())
                             <li class="active" aria-current="page"><span>{{ $page }}</span></li>
                         @else
-                            {{-- 3ページまで数字で表示 --}}
-                            @if ($page <= 3)
+                            {{-- 最初のページ以降 --}}
+                            @if ($page <= 3 || $page == $paginator->lastPage())
                                 <li><a href="{{ $url }}">{{ $page }}</a></li>
-                            @endif
-                            {{-- ...で表示 --}}
-                            @if ($page == 4)
+                            @elseif ($page == 4)
+                                {{-- 4ページ目の場合は '...' を表示 --}}
                                 <li class="disabled" aria-disabled="true"><span>...</span></li>
-                            @endif
-
-                            {{-- 最後のページを数字で --}}
-                            @if ($page == $paginator->lastPage())
-                                <li><a href="{{ $url }}">{{ $page }}</a></li>
                             @endif
                         @endif
                     @endforeach

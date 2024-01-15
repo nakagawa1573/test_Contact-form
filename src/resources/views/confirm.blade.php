@@ -19,7 +19,7 @@
                     お名前
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('contact')['last_name'] . ' ' . session('contact')['first_name'] }}
+                        {{ session('last_name') . ' ' . session('first_name') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -27,9 +27,9 @@
                     性別
                 </td>
                 <td class="confirm__table-item">
-                    @if (session('contact')['gender'] == 1)
+                    @if (session('gender') == 1)
                         男性
-                    @elseif (session('contact')['gender'] == 2)
+                    @elseif (session('gender') == 2)
                         女性
                     @else
                         その他
@@ -41,7 +41,7 @@
                     メールアドレス
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('contact')['email'] }}
+                    {{ session('email') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -49,7 +49,7 @@
                     電話番号
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('contact')['tell'] }}
+                    {{ session('tell_1') . session('tell_2') . session('tell_3')}}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -57,7 +57,7 @@
                     住所
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('contact')['address'] }}
+                    {{ session('address') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -65,7 +65,7 @@
                     建物名
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('contact')['building'] }}
+                    {{ session('building') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -73,7 +73,7 @@
                     お問い合わせの種類
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('category')['content'] }}
+                    {{ session('content') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -81,7 +81,7 @@
                     お問い合わせ内容
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('contact')['detail'] }}
+                    {{ session('detail') }}
                 </td>
             </tr>
         </table>
@@ -89,27 +89,41 @@
         <div class="test">
             <div class="confirm__submit">
 
-                <input type="hidden" name="last_name" value="{{ session('contact')['last_name'] }}">
-                <input type="hidden" name="first_name" value="{{ session('contact')['first_name'] }}">
-                <input type="hidden" name="gender" value="{{ session('contact')['gender'] }}">
-                <input type="hidden" name="email" value="{{ session('contact')['email'] }}">
-                <input type="hidden" name="tell" value="{{ session('contact')['tell'] }}">
-                <input type="hidden" name="address" value="{{ session('contact')['address'] }}">
-                <input type="hidden" name="building" value="{{ session('contact')['building'] }}">
-                <input type="hidden" name="category_id" value="{{ session('contact')['category_id'] }}">
-                <input type="hidden" name="detail" value="{{ session('contact')['detail'] }}">
+                <input type="hidden" name="last_name" value="{{ session('last_name')}}">
+                <input type="hidden" name="first_name" value="{{ session('first_name') }}">
+                <input type="hidden" name="gender" value="{{ session('gender')}}">
+                <input type="hidden" name="email" value="{{ session('email')}}">
+                <input type="hidden" name="tell" value="{{ session('tell_1') . session('tell_2') . session('tell_3')}}">
+                <input type="hidden" name="address" value="{{ session('address')}}">
+                <input type="hidden" name="building" value="{{ session('building')}}">
+                <input type="hidden" name="category_id" value="{{ session('category_id')}}">
+                <input type="hidden" name="detail" value="{{ session('detail')}}">
 
                 <button class="confirm__submit-btn" type="submit">
                     送信
                 </button>
             </div>
-            {{-- <div class="confirm__link"> --}}
-                    <a class="confirm__link-txt" href="/">
-                        修正
-                    </a>
-
-            {{-- </div> --}}
         </div>
     </form>
+                <form class="confirm__fix-form" action="/confirm/fix" method="post">
+                    @csrf
+                <input type="hidden" name="last_name" value="{{ session('last_name')}}">
+                <input type="hidden" name="first_name" value="{{ session('first_name') }}">
+                <input type="hidden" name="gender" value="{{ session('gender')}}">
+                <input type="hidden" name="email" value="{{ session('email')}}">
+                    <input type="hidden" name="tell_1" value="{{ session('tell_1')}}">
+                    <input type="hidden" name="tell_2" value="{{ session('tell_2')}}">
+                    <input type="hidden" name="tell_3" value="{{ session('tell_3')}}">
+                <input type="hidden" name="address" value="{{ session('address')}}">
+                <input type="hidden" name="building" value="{{ session('building')}}">
+                <input type="hidden" name="category_id" value="{{ session('category_id')}}">
+                <input type="hidden" name="detail" value="{{ session('detail')}}">
+                    
+                    <button class="confirm__fix-link" type="submit">
+                        <p class="confirm__fix-link__txt">
+                            修正
+                        </p>
+                    </button>
+                </form>
 </section>
 @endsection

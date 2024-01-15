@@ -19,15 +19,14 @@
 @endsection
 
 <section class="register__content">
-    <form class="register__content-form" action="/register" method="post">
+    <form class="register__content-form" action="/register" method="post" novalidate>
         @csrf
 
         <div class="register__content-form__box">
             <p class="register__content-form__ttl" id="name">
                 お名前
             </p>
-            <input class="register__content-form__input" type="text" placeholder="例: 山田　太郎" name="name"
-                value="{{ old('name') }}">
+            <input class="register__content-form__input" type="text" placeholder="例: 山田　太郎" name="name" value="{{ old('name') }}">
         </div>
 
         <div class="form__error">
@@ -40,8 +39,7 @@
             <p class="register__content-form__ttl" id="email">
                 メールアドレス
             </p>
-            <input class="register__content-form__input" type="text" placeholder="例: test@example.com" name="email"
-                value="{{ old('email') }}">
+            <input class="register__content-form__input" type="email" placeholder="例: test@example.com" name="email" value="{{ old('email') }}">
         </div>
 
         <div class="form__error">
