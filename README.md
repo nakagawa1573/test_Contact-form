@@ -24,7 +24,7 @@ Laravel環境構築
 
 ## ER図
 
-![ER](https://raw.githubusercontent.com/nakagawa1573/test_Contact-form/images/contact.drawio.png)
+![ER](https://raw.githubusercontent.com/nakagawa1573/images/main/contact.drawio.png)
 
 ## URL
 
