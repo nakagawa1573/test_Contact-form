@@ -1,14 +1,11 @@
 .admin__search {
     width: 1200px;
     margin: 0 auto;
-}
-
-.admin__search-form {
     display: flex;
     justify-content: space-between;
 }
 
-.admin__search-form>input,
+.admin__search>input,
 select {
     height: 50px;
     border: 1px solid #E3DED9;
@@ -45,8 +42,9 @@ select {
 }
 
 .admin__search-btn>img {
-    width: 30px;
+    width: 25px;
     height: auto;
+    margin-right: 10px;
 }
 
 .admin__search-gender:invalid,
@@ -71,7 +69,8 @@ select {
 }
 
 .admin__search-box__gender::before,
-.admin__search-box__category::before {
+.admin__search-box__category::before,
+.admin__search-date::after {
     content: "";
     width: 0;
     height: 0;
@@ -101,16 +100,24 @@ select {
     position: relative;
 }
 
-.admin__search-date::placeholder {
-    opacity: 0;
+.admin__search-date::before{
+    content: '日付を選択してください';
+    font-size: 18px;
+    color: #8B7969;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .admin__search-date::-webkit-calendar-picker-indicator {
-    /* display: none; */
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
+}
+
+.admin__search-date::-webkit-datetime-edit {
+    display: none;
 }
 
 
@@ -129,6 +136,7 @@ select {
     line-height: 18px;
     color: #8B7969;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
 
@@ -167,14 +175,18 @@ select {
 
 #name {
     padding-left: 55px;
-    width: 20%;
+    width: 18%;
 }
 
-#gender{
-    width: 15%;
+#gender {
+    width: 10%;
 }
 
-#email{
+#email {
+    width: 35%;
+}
+
+#category {
     width: 25%;
 }
 
@@ -190,25 +202,137 @@ select {
 
 .admin__list-table__item-form__btn {
     border: 1px solid #E1DBD6;
-    color: #E7DCD2;
     background: #FCFCFC;
     height: 40px;
-    padding: 0 20px;
-    line-height: 18px;
+    width: 80px;
+    padding: 0;
+    line-height: 40px;
+    cursor: pointer;
 }
 
+.admin__list-table__item-form__btn>a {
+    text-decoration: none;
+    color: #E7DCD2;
+    display: block;
+}
 
-.admin__submit{
+.admin__submit {
     text-align: center;
+    margin-top: 85px;
+    margin-bottom: 50px;
+    min-width: 1200px;
 }
 
 .admin__submit-btn {
     background: #8B7969;
-    color: #fff;
     border: none;
     font-size: 20px;
     height: 45px;
     width: 160px;
+    padding: 0;
+}
+
+.admin__submit-link {
+    color: #fff;
+    display: block;
+    line-height: 45px;
+}
+
+
+.detail__modal {
+    background: #fff;
+    width: 800px;
+    height: auto;
+    padding-bottom: 50px;
+    border: 1px solid #E3DEDA;
+    box-shadow: 5px 5px 5px #E3DEDA;
+    margin: 0 auto;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    transition: all .6s;
+}
+
+.detail__modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.detail__close {
+    text-align: right;
+    padding: 20px 20px 50px 0;
+}
+
+.detail__close-btn {
+    border: none;
+    background: transparent;
+
+}
+
+.detail__close-btn>img {
+    width: 40px;
+    height: auto;
+}
+
+.detail__list {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.detail__list-table__row {
+    text-align: left;
+    color: #8B7969;
+}
+
+.detail__list-table__header,
+.detail__list-table__item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.detail__list-table__header {
+    font-size: 20px;
+    width: 30%;
+}
+
+.detail__list-table__item {
+    padding-left: 70px;
+    font-size: 20px;
+}
+
+#detail-content {
+    vertical-align: top;
+}
+
+
+.detail__delete {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.detail__delete-btn {
+    border: none;
+    background: #BA370D;
+    color: #fff;
+    font-size: 18px;
+    height: 40px;
+    width: 75px;
     cursor: pointer;
-    margin-top: 85px;
+    padding: 0;
+}
+
+svg.w-5.h-5 {
+    width: 30px;
+    height: 30px;
+}
+
+.text-sm.text-gray-700.leading-5 {
+    display: none;
+}
+
+.flex.justify-between.flex-1.sm\:hidden {
+    display: none;
 }

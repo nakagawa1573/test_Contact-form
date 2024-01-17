@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use App\Models\User;
 
 class UserController extends Controller
 {
-    public function register()
+    public function index()
     {
-        return view('register');
+        return view('auth.register');
     }
 
-    public function login()
+    public function register(UserRequest $request)
     {
-        return view('login');
+        $user = $request->only(['name', 'email',]);
+        $user['password'] = bcrypt($request->password);
+        User::create($user);
+
+        return redirect('/login');
     }
 }

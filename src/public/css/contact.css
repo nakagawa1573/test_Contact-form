@@ -19,18 +19,12 @@
 }
 
 .contact__form-table__input {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    height: 30px;
     line-height: 30px;
-    width: 100%;
 }
 
 ::placeholder {
     color: #BEB1A6;
 }
-
-
 
 .contact__form-table__input>input {
     height: 30px;
@@ -74,6 +68,12 @@
     border: 1px solid #8B7969;
     outline: none;
     vertical-align: middle;
+    cursor: pointer;
+}
+.contact__form-table__input-gender>label,
+.contact__form-table__input-gender>label,
+.contact__form-table__input-gender>label{
+    cursor: pointer;
 }
 
 input[type="radio"]:checked{
@@ -88,6 +88,7 @@ input[type="radio"]:checked{
 #tell>input {
     padding-left: 0;
     width: 30%;
+    text-align: center;
 }
 
 #tell>input::placeholder {
@@ -95,9 +96,11 @@ input[type="radio"]:checked{
 }
 
 #tell>p {
-    /* display: inline-block; */
-    /* padding: 0 10px; */
     margin: 0 auto;
+}
+
+#detail{
+    vertical-align: top;
 }
 
 .contact__form-table__input-email,
@@ -112,6 +115,7 @@ input[type="radio"]:checked{
     padding: 8px 0 8px 20px;
     width: 100%;
     appearance: none;
+    cursor: pointer;
 }
 
 .contact__form-table__input-select:invalid{
@@ -151,7 +155,7 @@ input[type="radio"]:checked{
 
 .contact__form-submit {
     text-align: center;
-    padding-top: 30px;
+    margin-top: 30px;
 }
 
 .contact__form-submit__btn {
@@ -162,4 +166,27 @@ input[type="radio"]:checked{
     height: 40px;
     width: 150px;
     cursor: pointer;
+    padding: 0;
+}
+
+
+.form__error {
+    color: #ff0000;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+}
+
+#error__name{
+    display: flex;
+    justify-content: space-between;
+}
+
+#error__name>div{
+    width: 47%;
+}
+
+#error__name>div:last-child{
+    padding-left: 10px;
 }

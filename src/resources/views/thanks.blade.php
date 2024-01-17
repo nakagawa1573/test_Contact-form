@@ -23,11 +23,9 @@
                 <p class="ty__group-txt">
                     お問い合わせありがとうございました
                 </p>
-                <form action="">
-                    <button class="ty__group-btn">
-                        HOME
-                    </button>
-                </form>
+                <button class="ty__group-btn">
+                    <a href="/">HOME</a>
+                </button>
             </div>
         </div>
 
