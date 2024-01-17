@@ -1,6 +1,7 @@
 .ty {
     height: auto;
     position: relative;
+    width: 1400px;
 }
 
 .ty__txt {
@@ -34,10 +35,12 @@
     height: 40px;
     width: 120px;
     cursor: pointer;
+    padding: 0;
 }
 
 .ty__group-btn>a {
     text-decoration: none;
     color: #fff;
     display: block;
+    line-height: 40px;
 }

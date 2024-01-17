@@ -1,14 +1,11 @@
 .admin__search {
     width: 1200px;
     margin: 0 auto;
-}
-
-.admin__search-form {
     display: flex;
     justify-content: space-between;
 }
 
-.admin__search-form>input,
+.admin__search>input,
 select {
     height: 50px;
     border: 1px solid #E3DED9;
@@ -107,7 +104,6 @@ select {
     content: '日付を選択してください';
     font-size: 18px;
     color: #8B7969;
-    /* font-weight: bold; */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -140,6 +136,7 @@ select {
     line-height: 18px;
     color: #8B7969;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
 
@@ -187,14 +184,11 @@ select {
 
 #email {
     width: 35%;
-    /* white-space: nowrap; */
 }
 
 #category {
     width: 25%;
 }
-
-
 
 #category,
 #detail {
@@ -226,6 +220,7 @@ select {
     text-align: center;
     margin-top: 85px;
     margin-bottom: 50px;
+    min-width: 1200px;
 }
 
 .admin__submit-btn {
@@ -330,7 +325,6 @@ select {
 }
 
 svg.w-5.h-5 {
-    /*paginateメソッドの矢印の大きさ調整のために追加*/
     width: 30px;
     height: 30px;
 }

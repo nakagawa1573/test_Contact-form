@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'email' => ['required', 'email:filter,dns'],
+            'email' => ['required', 'email:filter,dns','unique:users'],
             'password' => ['required'],
         ];
     }
@@ -36,6 +36,7 @@ class UserRequest extends FormRequest
             'name.required' => 'お名前を入力してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスは「ユーザー名@ドメイン」形式で入力してください',
+            'email.unique' => 'そのメールアドレスは既に登録されてあります。',
             'password.required' => 'パスワードを入力してください',
         ];
     }

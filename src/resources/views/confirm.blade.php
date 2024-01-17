@@ -19,7 +19,7 @@
                     お名前
                 </td>
                 <td class="confirm__table-item">
-                        {{ session('last_name') . ' ' . session('first_name') }}
+                    {{ session('last_name') . ' ' . session('first_name') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -49,7 +49,7 @@
                     電話番号
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('tell_1') . session('tell_2') . session('tell_3')}}
+                    {{ session('tell_1') . session('tell_2') . session('tell_3') }}
                 </td>
             </tr>
             <tr class="confirm__table-row">
@@ -81,49 +81,51 @@
                     お問い合わせ内容
                 </td>
                 <td class="confirm__table-item">
-                    {{ session('detail') }}
+                    <p id="detail">{{ session('detail') }}</p>
                 </td>
             </tr>
         </table>
-
-        <div class="test">
-            <div class="confirm__submit">
-
-                <input type="hidden" name="last_name" value="{{ session('last_name')}}">
-                <input type="hidden" name="first_name" value="{{ session('first_name') }}">
-                <input type="hidden" name="gender" value="{{ session('gender')}}">
-                <input type="hidden" name="email" value="{{ session('email')}}">
-                <input type="hidden" name="tell" value="{{ session('tell_1') . session('tell_2') . session('tell_3')}}">
-                <input type="hidden" name="address" value="{{ session('address')}}">
-                <input type="hidden" name="building" value="{{ session('building')}}">
-                <input type="hidden" name="category_id" value="{{ session('category_id')}}">
-                <input type="hidden" name="detail" value="{{ session('detail')}}">
-
-                <button class="confirm__submit-btn" type="submit">
-                    送信
-                </button>
-            </div>
+        <div class="confirm__submit">
+            <input type="hidden" name="last_name" value="{{ session('last_name') }}">
+            <input type="hidden" name="first_name" value="{{ session('first_name') }}">
+            <input type="hidden" name="gender" value="{{ session('gender') }}">
+            <input type="hidden" name="email" value="{{ session('email') }}">
+            <input type="hidden" name="tell"
+                value="{{ session('tell_1') . session('tell_2') . session('tell_3') }}">
+            <input type="hidden" name="address" value="{{ session('address') }}">
+            <input type="hidden" name="building" value="{{ session('building') }}">
+            <input type="hidden" name="category_id" value="{{ session('category_id') }}">
+            <input type="hidden" name="detail" value="{{ session('detail') }}">
+            <button class="confirm__submit-btn" type="submit">
+                送信
+            </button>
         </div>
     </form>
-                <form class="confirm__fix-form" action="/confirm/fix" method="post">
-                    @csrf
-                <input type="hidden" name="last_name" value="{{ session('last_name')}}">
-                <input type="hidden" name="first_name" value="{{ session('first_name') }}">
-                <input type="hidden" name="gender" value="{{ session('gender')}}">
-                <input type="hidden" name="email" value="{{ session('email')}}">
-                    <input type="hidden" name="tell_1" value="{{ session('tell_1')}}">
-                    <input type="hidden" name="tell_2" value="{{ session('tell_2')}}">
-                    <input type="hidden" name="tell_3" value="{{ session('tell_3')}}">
-                <input type="hidden" name="address" value="{{ session('address')}}">
-                <input type="hidden" name="building" value="{{ session('building')}}">
-                <input type="hidden" name="category_id" value="{{ session('category_id')}}">
-                <input type="hidden" name="detail" value="{{ session('detail')}}">
-                    
-                    <button class="confirm__fix-link" type="submit">
-                        <p class="confirm__fix-link__txt">
-                            修正
-                        </p>
-                    </button>
-                </form>
+
+    <div class="confirm__fix">
+        <form class="confirm__fix-form" action="/confirm/fix" method="post">
+            @csrf
+            <input type="hidden" name="last_name" value="{{ session('last_name') }}">
+            <input type="hidden" name="first_name" value="{{ session('first_name') }}">
+            <input type="hidden" name="gender" value="{{ session('gender') }}">
+            <input type="hidden" name="email" value="{{ session('email') }}">
+            <input type="hidden" name="tell_1" value="{{ session('tell_1') }}">
+            <input type="hidden" name="tell_2" value="{{ session('tell_2') }}">
+            <input type="hidden" name="tell_3" value="{{ session('tell_3') }}">
+            <input type="hidden" name="address" value="{{ session('address') }}">
+            <input type="hidden" name="building" value="{{ session('building') }}">
+            <input type="hidden" name="category_id" value="{{ session('category_id') }}">
+            <input type="hidden" name="detail" value="{{ session('detail') }}">
+            <button class="confirm__fix-link" type="submit">
+                <p class="confirm__fix-link__txt">
+                    修正
+                </p>
+            </button>
+        </form>
+    </div>
 </section>
+
+
+
+
 @endsection

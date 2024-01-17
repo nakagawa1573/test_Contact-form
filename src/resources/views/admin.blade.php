@@ -20,62 +20,65 @@
 @section('title')
     Admin
 @endsection
-<div class="admin__search">
+<div>
     <form class="admin__search-form" action="/admin/search" method="get" novalidate>
-        @csrf
-        <div class="admin__search-box__txt">
-            <input class="admin__search-txt" type="text" placeholder="名前やメールアドレスを入力してください" name="keyword" value="{{ $keyword['keyword'] ?? '' }}">
-            <button class="admin__search-btn" type="submit">
-                <img src="{{ asset('img/search.svg') }}" alt="search">
-            </button>
-        </div>
+        <div class="admin__search">
+            @csrf
+            <div class="admin__search-box__txt">
+                <input class="admin__search-txt" type="text" placeholder="名前やメールアドレスを入力してください" name="keyword"
+                    value="{{ $keyword['keyword'] ?? '' }}">
+                <button class="admin__search-btn" type="submit">
+                    <img src="{{ asset('img/search.svg') }}" alt="search">
+                </button>
+            </div>
 
-        <div class="admin__search-box__gender">
-            <select class="admin__search-gender" name="gender" required>
-                <option value="" disabled selected style="display:none;">
-                    性別
-                </option>
-                <option value="0" {{isset($gender['gender']) && $gender['gender']  == 0 ? 'selected' : ''}}>
-                    全て
-                </option>
-                <option value="1" {{isset($gender['gender']) && $gender['gender']  == 1 ? 'selected' : ''}}>
-                    男性
-                </option>
-                <option value="2" {{isset($gender['gender']) && $gender['gender']  == 2 ? 'selected' : ''}}>
-                    女性
-                </option>
-                <option value="3" {{isset($gender['gender']) && $gender['gender']  == 3 ? 'selected' : ''}}>
-                    その他
-                </option>
-            </select>
-        </div>
-
-        <div class="admin__search-box__category">
-            <select class="admin__search-category" name="category_id" required>
-                <option value="" disabled selected style="display:none;">
-                    お問い合わせの種類
-                </option>
-                @foreach ($categories as $category)
-                    <option value="{{ $category->id }}" {{isset($category_id['category_id']) && $category_id['category_id']  ==  $category->id ? 'selected' : ''}}>
-                        {{ $category->content }}
+            <div class="admin__search-box__gender">
+                <select class="admin__search-gender" name="gender" required>
+                    <option value="" disabled selected style="display:none;">
+                        性別
                     </option>
-                @endforeach
-            </select>
+                    <option value="0" {{ isset($gender['gender']) && $gender['gender'] == 0 ? 'selected' : '' }}>
+                        全て
+                    </option>
+                    <option value="1" {{ isset($gender['gender']) && $gender['gender'] == 1 ? 'selected' : '' }}>
+                        男性
+                    </option>
+                    <option value="2" {{ isset($gender['gender']) && $gender['gender'] == 2 ? 'selected' : '' }}>
+                        女性
+                    </option>
+                    <option value="3" {{ isset($gender['gender']) && $gender['gender'] == 3 ? 'selected' : '' }}>
+                        その他
+                    </option>
+                </select>
+            </div>
+
+            <div class="admin__search-box__category">
+                <select class="admin__search-category" name="category_id" required>
+                    <option value="" disabled selected style="display:none;">
+                        お問い合わせの種類
+                    </option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}"
+                            {{ isset($category_id['category_id']) && $category_id['category_id'] == $category->id ? 'selected' : '' }}>
+                            {{ $category->content }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <input class="admin__search-date" type="date" name="created_at"
+                value="{{ $created_at['created_at'] ?? '' }}">
         </div>
 
-        <input class="admin__search-date" type="date" name="created_at" value="{{ $created_at['created_at'] ?? '' }}">
+        <div class="admin__group">
+            <button class="adminn__group-export" type="submit" formaction="/admin/download" formmethod="get">
+                エクスポート
+            </button>
+            <div class="admin__group-pages">
+                {{ $contacts->appends(request()->query())->links('vendor.pagination.pages') }}
+            </div>
+        </div>
     </form>
 </div>
-
-<div class="admin__group">
-    <button class="adminn__group-export">
-        エクスポート
-    </button>
-    <div class="admin__group-pages">
-        {{ $contacts->appends(request()->query())->links('vendor.pagination.pages') }}
-    </div>
-</div>
-
 <section class="admin__list">
     <table class="admin__list-table">
         <tr class="admin__list-table__row-1">
@@ -117,7 +120,7 @@
 
 <div class="admin__submit">
     <button class="admin__submit-btn">
-        <a class="admin__submit-link" href="/admin">リセット</a>  
+        <a class="admin__submit-link" href="/admin">リセット</a>
     </button>
 </div>
 

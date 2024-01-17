@@ -2,6 +2,7 @@
 .confirm{
     width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 .confirm__table{
@@ -24,26 +25,13 @@
     color: #8B7969;
 }
 
-
-/* .test{
-    width: 1000px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+#detail{
+    white-space: pre-line;
+}
 
 .confirm__submit {
     text-align: center;
-    /* padding-top: 30px; */
-    height: 40px;
-    width: 120px;
-    margin: 30px auto 0 auto;
-}
-
-.test{
-    
+    margin-top: 30px;
 }
 
 .confirm__submit-btn {
@@ -53,11 +41,11 @@
     font-size: 20px;
     height: 40px;
     width: 120px;
-    margin-left: 30px;
     cursor: pointer;
 }
 
-.confirm__fix-form{
+
+.confirm__fix{
     position: relative;
 }
 
@@ -67,7 +55,7 @@
     color: #8B7969;
     font-size: 20px;
     position: absolute;
-    right: 32%;
+    right: 35%;
     transform: translateY(-100%);
     cursor: pointer;
     height: 40px;

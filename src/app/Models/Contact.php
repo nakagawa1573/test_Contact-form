@@ -55,4 +55,5 @@ class Contact extends Model
             $query->whereDate('created_at', '=', $created_at)->get();
         }
     }
+
 }

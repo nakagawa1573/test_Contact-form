@@ -15,24 +15,16 @@
 
 <body>
     <header class="header">
-
-        <div class="header__ttl">
-            <p class="header__ttl-txt">
-                FashionablyLate
-            </p>
-        </div>
+        <h1 class="header__ttl">
+            FashionablyLate
+        </h1>
         @yield('button')
-
     </header>
     <main>
-
-        <div class="main__ttl">
-            <p class="main__ttl-txt">
-                @yield('title')
-            </p>
-        </div>
+        <h2 class="main__ttl">
+            @yield('title')
+        </h2>
         @yield('content')
-
     </main>
 </body>
 

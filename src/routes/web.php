@@ -28,15 +28,17 @@ Route::post('/confirm/fix', [ContactController::class, 'fix'] );
 // サンクスページ
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
-//管理画面
+//管理ページ
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
 });
+Route::get('/admin/download', [ContactController::class, 'download']);
+
 //contact削除
 Route::delete('/admin/delete', [ContactController::class, 'destroy']);
-    // 検索
 Route::get('/admin/search', [ContactController::class, 'search']);
 
+// 登録ページ
 Route::get('/register', [UserController::class, 'index']);
 Route::post('/register', [UserController::class, 'register']);
 

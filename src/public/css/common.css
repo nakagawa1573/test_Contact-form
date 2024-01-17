@@ -2,20 +2,18 @@
     border-bottom: 1px solid #E0DFDE;
     position: relative;
     background: #fff;
+    min-width: 1200px;
 }
+
 
 .header__ttl {
-    text-align: center;
-    width: 30%;
-    margin: 0 auto;
-}
-
-.header__ttl-txt {
     color: #8B7969;
-    font-size: 40px;
+    font-size: 39px;
     font-family: 'Inika', serif;
     margin: 0;
-    padding: 10px 0;
+    padding: 20px 0;
+    font-weight: normal;
+    text-align: center;
 }
 
 .header__link {
@@ -44,12 +42,20 @@
     display: block;
 }
 
+main {
+    min-width: 1200px;
+}
+
 .main__ttl {
     text-align: center;
 }
 
-.main__ttl-txt {
+.main__ttl {
     color: #8B7969;
     font-size: 35px;
     font-family: 'Inika', serif;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

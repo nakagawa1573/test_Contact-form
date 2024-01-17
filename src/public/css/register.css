@@ -2,6 +2,11 @@ body {
     background: #F1ECE7;
 }
 
+section {
+    min-width: 1200px;
+    margin-bottom: 50px;
+}
+
 .register__content {
     width: 500px;
     min-width: 40%;
@@ -61,7 +66,6 @@ input::placeholder {
     width: 60%;
     margin: 0 auto;
     vertical-align: middle;
-    /* border: 1px solid red; */
     font-size: 14px;
     line-height: 55px;
 }
